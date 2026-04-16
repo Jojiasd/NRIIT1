@@ -10,9 +10,7 @@
     "lint": "eslint .",
     "test": "jest"
   },
-  "dependencies": {
-    "@vercel/node": "^3.7.0"
-  },
+
   "devDependencies": {
     "eslint": "^8.0.0",
     "jest": "^29.0.0"
