@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - NRIIT</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1>🎓 NRIIT College</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="student.html">Student Portal</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="page-title">Student Management Portal</h2>
+
+        <div id="alertContainer"></div>
+
+        <!-- Add/Edit Student Section -->
+        <div class="card">
+            <h3>📝 Register / Update Student</h3>
+            <form id="studentForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentId">Student ID:</label>
+                        <input type="text" id="studentId" placeholder="e.g., ST001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" placeholder="Enter first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" placeholder="Enter last name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="student@nriit.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" placeholder="+91-XXXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="course">Course/Program:</label>
+                        <select id="course" required>
+                            <option value="">-- Select Course --</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="BCA">BCA</option>
+                            <option value="MBA">MBA</option>
+                            <option value="B.Sc">B.Sc</option>
+                            <option value="M.Tech">M.Tech</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="branch">Branch/Specialization:</label>
+                        <select id="branch" required>
+                            <option value="">-- Select Branch --</option>
+                            <option value="CSE">Computer Science</option>
+                            <option value="ECE">Electronics</option>
+                            <option value="ME">Mechanical</option>
+                            <option value="CE">Civil</option>
+                            <option value="IT">Information Technology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester:</label>
+                        <select id="semester" required>
+                            <option value="">-- Select Semester --</option>
+                            <option value="1">1st Semester</option>
+                            <option value="2">2nd Semester</option>
+                            <option value="3">3rd Semester</option>
+                            <option value="4">4th Semester</option>
+                            <option value="5">5th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="7">7th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" placeholder="Enter residential address" rows="3"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success">✓ Register/Update Student</button>
+                    <button type="button" class="btn btn-primary" onclick="resetForm()">↺ Clear Form</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- View All Students Section -->
+        <div class="card">
+            <h3>📋 Registered Students</h3>
+            <div style="margin-bottom: 15px;">
+                <input type="text" id="searchInput" placeholder="🔍 Search by name, ID, or email..." 
+                       style="width: 300px; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div id="studentsContainer" style="overflow-x: auto;">
+                <table class="table" id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Course</th>
+                            <th>Branch</th>
+                            <th>Semester</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsBody">
+                        <tr><td colspan="8" style="text-align: center; padding: 20px;">No students registered yet.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NRIIT College. All rights reserved.</p>
+    </footer>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
